@@ -2,17 +2,24 @@
 <html>
 <head>
 
-  <title>EverestApp</title>
-   <!-- link to themed version of bootstrap hosted on the internet -->
-   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" >
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
+	<title>EverestApp</title>
+	<!-- link to themed version of bootstrap hosted on the internet -->
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<%= stylesheet_link_tag    'application', media: 'all' %>
+	<%= javascript_include_tag 'application' %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+	<%= yield %>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 </body>
 </html>
