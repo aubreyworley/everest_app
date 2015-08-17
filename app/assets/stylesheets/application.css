@@ -13,3 +13,234 @@
  *= require_tree .
  *= require_self
  */
+
+ #map-canvas {
+  width: 500px;
+  height: 500px;
+  background-color: #CCC;
+
+}
+
+#slope_chart,
+#elevation_chart {
+  width: 500px;
+  height: 250px;
+}
+
+.table {
+  margin-left: 0px;
+  margin-bottom: 0px;
+}
+
+.color-index {
+  width: 40px;
+  height: 20px;
+  border: solid 1px;
+}
+#green {
+  background-color: #3CB371;
+}
+#yellow {
+  background-color: #FFFF00;
+}
+#blue {
+  background-color: #3366FF;
+}
+#red {
+  background-color: #FF0000;
+}
+#black {
+  background-color: #000000;
+}
+
+/* Fix for google maps info window */
+#map-canvas img {
+  max-width: none;
+}
+#map-canvas label {
+  width: auto;
+  display: inline;
+}
+
+.slope {
+  margin: 10px;
+}
+
+form#routes .span3 {
+  padding-top: 50px;
+}
+
+form input {
+  width: 480px;
+}
+
+form #from-to-switcher {
+  position: relative;
+  height: 16px;
+  width: 16px;
+  margin-top: -5px;
+  margin-left: 75%;
+  margin-bottom: -10px;
+  cursor: pointer;
+}
+
+form #from-to-switcher:after {
+  content : "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*background-image: url(../img/fromToSwitcher.png);*/
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  opacity : 0.45;
+  z-index: -1;
+}
+
+form #from-to-switcher:hover:after {
+  opacity : 1;
+}
+
+.btn {
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.slope-label {
+  position: relative;
+  top: -30px;
+  right: -320px;
+}
+
+#content {
+  width:  100px;
+  height: 100px;
+}
+
+#author {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #999;
+}
+
+#travel-mode, #measurement-mode {
+  width: 100px;
+  margin-left: 10px;
+  margin-top: 11px;
+}
+
+.selector-wrapper{
+  width: 400px;
+}
+
+.selector-wrapper input, .selector-wrapper label{
+  display:inline-block;
+}
+
+#travel-label {
+  margin-bottom: 5px;
+}
+
+#distance {
+  margin-top: 10px;
+}
+
+.travel-info {
+  display: none;
+}
+
+/* Portrait phones */
+@media (max-width: 320px){
+  .selector-wrapper{
+    width: 100%;
+  }
+  
+  th, td{
+    font-size: 0.9em;
+  }
+}
+
+/* Landscape phones and down */
+@media (max-width: 768px) { 
+
+  #map-canvas {
+    width: 100%;
+    height: 350px;
+  } 
+
+  #from,
+  #to {
+    width: 100%;
+  }
+
+  .table {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #slope_chart,
+  #elevation_chart {
+    width: 100%;
+    height: 250px;
+  }
+
+  #github {
+    visibility: hidden;
+  }
+  
+  .selector-wrapper{
+    width: 240px;
+  }
+
+}
+
+@media (min-width: 769px) and (max-width: 980px) {
+#map-canvas {
+    width: 100%;
+    height: 350px;
+  } 
+
+  #from,
+  #to {
+    width: 300px;
+  }
+
+  .table {
+    width: 300px;
+    margin-left: 0px;
+  }
+
+  #slope_chart,
+  #elevation_chart {
+    width: 750px;
+    height: 175px;
+  }
+
+}
+
+@media (min-width: 981px) and (max-width: 1200px) {
+#map-canvas {
+    width: 500px;
+    height: 350px;
+  } 
+
+  #from,
+  #to {
+    width: 300px;
+  }
+
+  .table {
+    width: 300px;
+  }
+
+  #slope_chart,
+  #elevation_chart {
+    width: 470px;
+    height: 175px;
+  }
+
+  form #from-to-switcher {
+    margin-left: 50%;
+  }
+}

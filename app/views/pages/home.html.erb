@@ -1,23 +1,20 @@
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 50%;
-        width: 50%;
-      }
-#panel {
-  position: absolute;
-  top: 10px;
-  left: 25%;
-  z-index: 5;
-  background-color: #fff;
-  padding: 5px;
-  border: 1px solid #999;
-  text-align: center;
-}
+<style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #panel {
+      position: absolute;
+      top: 10px;
+      left: 25%;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+      text-align: center;
+    }
 
 /**
  * Provide the following styles for both ID and class, where ID represents an
@@ -26,7 +23,7 @@
  * name.
  */
 
-#panel, .panel {
+ #panel, .panel {
   font-family: 'Roboto','sans-serif';
   line-height: 30px;
   padding-left: 10px;
@@ -43,43 +40,127 @@
 #panel i, .panel i {
   font-size: 12px;
 }
+</style>
 
-    </style>
-    <div id="panel">
-    <b>Start: </b>
-    <select id="start" onchange="calcRoute();">
-      <option value="chicago, il">Chicago</option>
-      <option value="st louis, mo">St Louis</option>
-      <option value="joplin, mo">Joplin, MO</option>
-      <option value="oklahoma city, ok">Oklahoma City</option>
-      <option value="amarillo, tx">Amarillo</option>
-      <option value="gallup, nm">Gallup, NM</option>
-      <option value="flagstaff, az">Flagstaff, AZ</option>
-      <option value="winona, az">Winona</option>
-      <option value="kingman, az">Kingman</option>
-      <option value="barstow, ca">Barstow</option>
-      <option value="san bernardino, ca">San Bernardino</option>
-      <option value="los angeles, ca">Los Angeles</option>
-    </select>
-    <b>End: </b>
-    <select id="end" onchange="calcRoute();">
-      <option value="chicago, il">Chicago</option>
-      <option value="st louis, mo">St Louis</option>
-      <option value="joplin, mo">Joplin, MO</option>
-      <option value="oklahoma city, ok">Oklahoma City</option>
-      <option value="amarillo, tx">Amarillo</option>
-      <option value="gallup, nm">Gallup, NM</option>
-      <option value="flagstaff, az">Flagstaff, AZ</option>
-      <option value="winona, az">Winona</option>
-      <option value="kingman, az">Kingman</option>
-      <option value="barstow, ca">Barstow</option>
-      <option value="san bernardino, ca">San Bernardino</option>
-      <option value="los angeles, ca">Los Angeles</option>
-    </select>
+  <div class="container">
+    <div class="row">
+      <div class="span4">
+        <h1>Flattest Route</h1>
+      </div>
     </div>
-    
 
-    <div id="map"></div>
+  <div class="row">
+    <form id="routes">
+      <div class="span3">
+        <div id="target" class="place-inputs">
+          <div class="place-input">
+            <label>
+              From: <input id="from" type="text" placeholder="Nob Hill, San Francisco, CA">
+            </label>
+          </div>
+          <!-- <div id="from-to-switcher"></div> -->
+          <div class="place-input">
+            <label>
+              To: <input id="to" type="text" placeholder="Russian Hill, San Francisco, CA">
+            </label>
+          </div>
+          <div class="place-input selector-wrapper">
+            <label for="travel-mode">Travel mode:</label>
+            <select id="travel-mode">
+              <option>Bicycling</option>
+              <option>Walking</option>
+              <option>Driving</option>
+            </select>
+            &nbsp;
+            <label for="measurement-mode">Units:</label>
+            <select id="measurement-mode">
+              <option value="miles">Miles</option>
+              <option value="km">Kilometres</option>
+            </select>
+          </div>
+          <div class="place-input">
+            <button class="btn" id="go">Go</button>
+          </div>
+        </div>
 
-    <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"
-        async defer></script>
+
+      </div>
+    </form>
+    <div class="span4 offset4">
+      <table class="table">
+        <th>
+          <td>Difficulty</td>
+          <td>% Grade</td>
+        </th>
+        <tr>
+          <td><div class="color-index" id="green"</div></td>
+          <td>Easy</td>
+          <td>&lt;5%</td>
+        </tr>
+        <tr>
+          <td><div class="color-index" id="yellow"</div></td>
+          <td>Moderate</td>
+          <td>5-10%</td>
+        </tr>
+        <tr>
+          <td><div class="color-index" id="blue"</div></td>
+          <td>Difficult</td>
+          <td>10-15%</td>
+        </tr>
+        <tr>
+          <td><div class="color-index" id="red"</div></td>
+          <td>Very Difficult</td>
+          <td>15-20%</td>
+        </tr>
+        <tr>
+          <td><div class="color-index" id="black"</div></td>
+          <td>Too *wheeze* steep</td>
+          <td>&gt;20%</td>
+        </tr>
+      </table>
+        <div class="row travel-info">
+          <div class="span2">
+            Distance:
+            <span id="distance"></span>
+          </div>
+        </div>
+        <div class="row travel-info">
+          <div class="span3" id="travel-label">
+            Travel Time:
+            <span id="travel-time"></span>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div>
+      <div class="span6" id="map-canvas"></div>
+    </div>
+    <div class="span5">
+      <div id="elevation_chart"></div>
+
+      <div id="slope_chart"></div>
+    </div>
+  </div>
+
+  <div id="directionsPanel"></div>
+  <div class="row" id="author">
+  </div>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXj3FxJkwYjszaD_xk5c_l8CAqjCRfno4"></script>
+
+<!--  // <script src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>  -->
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+  
+
+
+
+
+
+ 
+
+
+
+
+
