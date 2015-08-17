@@ -29,12 +29,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(session[:user_id])
-    render :show
   end
 
   def edit
-    @user = User.find(session[:user_id])
   end
 
   def update
