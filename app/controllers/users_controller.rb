@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   def update
     if current_user
       form_params = params.require(:user).permit(:first_name, :last_name, :user_name, :email, :about)
-      user.update_attributes(form_params)
+      current_user.update_attributes(form_params)
       redirect_to profile_path
     else
       redirect_to '/'

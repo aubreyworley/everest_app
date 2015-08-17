@@ -1,4 +1,29 @@
 Welcome, <%= current_user.email %> 
 
 <h1>Profile Page</h1>
+ 
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 profile">
+      
+        <div class="col-md-1"></div>
+        <div class="col-md-3 profile-section text-center pull-left">
+          <div class="dropdown pull-left">
+            <button class="glyphicon glyphicon-chevron-down dropdown-toggle button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><%= link_to "Update Profile", edit_user_path(current_user) %></li>
+            </ul>
+          </div>
+            <h2><%= current_user.first_name %><%= " " %> <%= current_user.last_name %><span>
+              <hr class="style-one">
+              <p> About: <%= @current_user.about %></p>
+            </h2>
+        </div>
+      </div> 
+  </div>
+</div>
+
+  
+
 
