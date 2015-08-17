@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+
   before_filter :authorize, only: [:show]
 
   def index
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
     end
   end
 
-  private 
+  private
     def user_params
       params.require(:user).permit(:email, :password)
     end
