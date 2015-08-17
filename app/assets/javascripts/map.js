@@ -102,39 +102,17 @@ function initialize_maps() {
     );
 }
 
-var placeSearch, autocomplete;
+function initAutocomplete(field) {
+    var input = document.getElementById(field);
+    autocomplete = new google.maps.places.Autocomplete(input);
 
-function initAutocomplete() {
-  // Create the autocomplete object, restricting the search to geographical
-  // location types.
-  autocomplete = new google.maps.places.Autocomplete(
-      /** @type {!HTMLInputElement} */(document.getElementById('from')),
-      {types: ['geocode']});
-
-  autocomplete = new google.maps.places.Autocomplete(
-      /** @type {!HTMLInputElement} */(document.getElementById('to')),
-      {types: ['geocode']});
-}
-
-// [START region_geolocation]
-// Bias the autocomplete object to the user's geographical location,
-// as supplied by the browser's 'navigator.geolocation' object.
-function geolocate() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var geolocation = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      var circle = new google.maps.Circle({
-        center: geolocation,
-        radius: position.coords.accuracy
-      });
-      autocomplete.setBounds(circle.getBounds());
+    // Prevent form submission when selecting place with enter.
+    // http://stackoverflow.com/questions/11388251/google-autocomplete-enter-to-select
+    $('#' + field).keydown(function (e) {
+      if (e.which == 13 && $('.pac-container:visible').length)
+        return false;
     });
-  }
 }
-// [END region_geolocation]
 
 function calcRoute() {
     var start = $("#from").val() || $("#from").attr("placeholder");
