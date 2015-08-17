@@ -1,60 +1,48 @@
-<div class="col-md-12" id="landing-img">
-  <h1 class="logo">EVEREST</h1>
-</div>
-<style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
+  <!-- top navbar -->
+  <nav class="navbar">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/"></a>
+      </div>
 
-    #panel {
-      position: absolute;
-      top: 10px;
-      left: 25%;
-      z-index: 5;
-      background-color: #fff;
-      padding: 5px;
-      border: 1px solid #999;
-      text-align: center;
-    }
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <% if current_user %>
+              <a href="/logout" class="btn">Log Out</a>
+            <% else %>
+              <button type="button" data-toggle="modal" data-target="#loginUpModal"class="btn btn-dark navbar-btn">Login</button>
+              <button type="button" data-toggle="modal" data-target="#signUpModal"class="btn btn-dark navbar-btn">Sign Up</button>
+            <% end %>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/about">About</a></li>
+              <li><a href="/profile">Profile</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div>
+  </nav>
+  <!-- top navbar end --> 
 
-/**
- * Provide the following styles for both ID and class, where ID represents an
- * actual existing "panel" with JS bound to its name, and the class is just
- * non-map content that may already have a different ID with JS bound to its
- * name.
- */
-
- #panel, .panel {
-  font-family: 'Roboto','sans-serif';
-  line-height: 30px;
-  padding-left: 10px;
-}
-
-#panel select, #panel input, .panel select, .panel input {
-  font-size: 15px;
-}
-
-#panel select, .panel select {
-  width: 100%;
-}
-
-#panel i, .panel i {
-  font-size: 12px;
-}
-</style>
-
-  <div class="container">
+  <div class="col-md-12" id="landing-img">
+    <div class="container-fluid">
+      <h1 class="logo">EVEREST</h1>
+    </div>
+  </div>
+  <div class="col-md-12">
     <div class="row">
       <div class="span4">
         <h1>Flattest Route</h1>
-      </div>
     </div>
-
-  <div class="row">
+  </div>
     <form id="routes">
-      <div class="span3">
+      <div class="col-md-6">
         <div id="target" class="place-inputs">
           <div class="place-input">
             <label>
@@ -67,28 +55,38 @@
               To: <input id="to" type="text" placeholder="Russian Hill, San Francisco, CA">
             </label>
           </div>
-          <div class="place-input selector-wrapper">
-            <label for="travel-mode">Travel mode:</label>
-            <select id="travel-mode">
-              <option>Bicycling</option>
-              <option>Walking</option>
-              <option>Driving</option>
-            </select>
-            &nbsp;
-            <label for="measurement-mode">Units:</label>
-            <select id="measurement-mode">
-              <option value="miles">Miles</option>
-              <option value="km">Kilometres</option>
-            </select>
-          </div>
-          <div class="place-input">
-            <button class="btn" id="go">Go</button>
-          </div>
         </div>
-
-
       </div>
-    </form>
+      <div class="col-md-6">
+        <div class="place-input selector-wrapper">
+          <label for="travel-mode">Travel mode:</label>
+          <select id="travel-mode">
+            <option>Bicycling</option>
+            <option>Walking</option>
+            <option>Driving</option>
+          </select>
+          &nbsp;
+          <label for="measurement-mode">Units:</label>
+          <select id="measurement-mode">
+            <option value="miles">Miles</option>
+            <option value="km">Kilometres</option>
+          </select>
+        </div>
+      </div>
+      <div class="place-input text-center">
+        <button class="btn" id="go">Go</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="col-md-12">
+  <div class="col-md-9">
+    <div>
+      <div class="span6" id="map-canvas"></div>
+    </div>
+  </div>
+  <div class="col-md-3">
     <div class="span4 offset4">
       <table class="table">
         <th>
@@ -121,39 +119,38 @@
           <td>&gt;20%</td>
         </tr>
       </table>
-        <div class="row travel-info">
-          <div class="span2">
-            Distance:
-            <span id="distance"></span>
-          </div>
+      <div class="row travel-info">
+        <div class="span2">
+          Distance:
+          <span id="distance"></span>
         </div>
-        <div class="row travel-info">
-          <div class="span3" id="travel-label">
-            Travel Time:
-            <span id="travel-time"></span>
-          </div>
+      </div>
+      <div class="row travel-info">
+        <div class="span3" id="travel-label">
+          Travel Time:
+          <span id="travel-time"></span>
         </div>
+      </div>
     </div>
   </div>
-
+</div>     
+<div class="col-md-12">
   <div class="row">
-    <div>
-      <div class="span6" id="map-canvas"></div>
-    </div>
     <div class="span5">
       <div id="elevation_chart"></div>
-
       <div id="slope_chart"></div>
     </div>
   </div>
+</div>
 
-  <div id="directionsPanel"></div>
-  <div class="row" id="author">
-  </div>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXj3FxJkwYjszaD_xk5c_l8CAqjCRfno4"></script>
+<div id="directionsPanel"></div>
+<div class="row" id="author">
+</div>
 
-  <!-- &libraries=places&callback=initAutocomplete -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXj3FxJkwYjszaD_xk5c_l8CAqjCRfno4"></script>
 
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>  -->
-  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-  <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<!-- &libraries=places&callback=initAutocomplete -->
+
+<!-- <script src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>  -->
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
