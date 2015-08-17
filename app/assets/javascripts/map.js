@@ -52,7 +52,7 @@ $(function () {
     //  Create event handler that will start the calcRoute function when
     //  the go button is clicked.
     $("form#routes").on("submit", function (e) {
-        
+
         measurementMode = $("#measurement-mode").val();
         metricUnit = measurementMode == "miles" ? "ft" : "m";
         e.preventDefault();
@@ -60,8 +60,8 @@ $(function () {
     });
 
     initialize_maps();
-    initAutoComplete('from');
-    initAutoComplete('to');
+    initAutocomplete('from');
+    initAutocomplete('to');
 
     if (from != "null" && to != "null") {
         calcRoute();
@@ -102,17 +102,39 @@ function initialize_maps() {
     );
 }
 
-function initAutoComplete(field) {
-    var input = document.getElementById(field);
-    autocomplete = new google.maps.places.Autocomplete(input);
+var placeSearch, autocomplete;
 
-    // Prevent form submission when selecting place with enter.
-    // http://stackoverflow.com/questions/11388251/google-autocomplete-enter-to-select
-    $('#' + field).keydown(function (e) {
-      if (e.which == 13 && $('.pac-container:visible').length)
-        return false;
-    });
+function initAutocomplete() {
+  // Create the autocomplete object, restricting the search to geographical
+  // location types.
+  autocomplete = new google.maps.places.Autocomplete(
+      /** @type {!HTMLInputElement} */(document.getElementById('from')),
+      {types: ['geocode']});
+
+  autocomplete = new google.maps.places.Autocomplete(
+      /** @type {!HTMLInputElement} */(document.getElementById('to')),
+      {types: ['geocode']});
 }
+
+// [START region_geolocation]
+// Bias the autocomplete object to the user's geographical location,
+// as supplied by the browser's 'navigator.geolocation' object.
+function geolocate() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var geolocation = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      var circle = new google.maps.Circle({
+        center: geolocation,
+        radius: position.coords.accuracy
+      });
+      autocomplete.setBounds(circle.getBounds());
+    });
+  }
+}
+// [END region_geolocation]
 
 function calcRoute() {
     var start = $("#from").val() || $("#from").attr("placeholder");
@@ -155,7 +177,7 @@ function updateRoutes() {
     var path = routes[this.routeIndex].overview_path;
     distance = routes[this.routeIndex].legs[0].distance;
     duration = routes[this.routeIndex].legs[0].duration;
-    
+
     /* Shows distance in miles or kilometres, depending on measurement mode. */
     if(measurementMode == "miles"){
         $("#distance").html(distance.text);
@@ -163,7 +185,7 @@ function updateRoutes() {
     else{
         $("#distance").html((distance.value / 1000) + "Km");
     }
-    
+
     $("#travel-time").html(duration.text);
     $(".travel-info").show();
     newPath(path, distance.value);
@@ -194,7 +216,7 @@ function plotElevation(elevations, status) {
     map.elevationData.locations = [];
     map.elevationData.elevation = [];
     for (i = 0; i < elevations.length; i++) {
-        
+
         // Change elevation from meters to feet.
         //console.log(measurementMode);
         if(measurementMode == "miles"){
@@ -203,18 +225,18 @@ function plotElevation(elevations, status) {
         else{
             feetMultiplicator = 1;
         }
-        
+
         map.elevationData.addRow([
             '',
             elevations[i].elevation * feetMultiplicator
         ]);
         map.elevationData.locations.push( elevations[i].location );
         map.elevationData.elevation.push( elevations[i].elevation * feetMultiplicator );
-        
+
     }
-    
+
     // Draw the chart using the data within its div.
-    
+
     elevationChart = new google.visualization.ColumnChart(elevationChartDiv.get(0));
     elevationChart.draw(map.elevationData, {
         // width: 500,
