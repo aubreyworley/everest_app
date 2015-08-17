@@ -13,6 +13,15 @@
  *= require_tree .
  *= require_self
  */
+ html, body {
+  width: 100%;
+  height: 100%;
+ }
+
+ @font-face {
+  font-family: logo;
+  src: url(/fonts/slant.ttf);
+ }
 
  #map-canvas {
   width: 500px;
@@ -243,4 +252,22 @@ form #from-to-switcher:hover:after {
   form #from-to-switcher {
     margin-left: 50%;
   }
+}
+
+#landing-img {
+  width: 100%;
+  height: 100%;
+  background-image: url(/landing.jpg);
+/*  background-color: rgba(0, 0, 0, 1);*/
+  background-size: cover;
+  position: relative;
+}
+.logo {
+  font-family: logo;
+  font-size: 7em;
+  color: white;
+  text-shadow: 1px 1px 5px #000000;
+  position: absolute;
+  top: 40%;
+  left: 40%;
 }
