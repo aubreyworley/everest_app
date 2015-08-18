@@ -16,6 +16,9 @@
  /*----------------------------
     GLOBAL STYLES
 -----------------------------*/
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
  html, body {
   width: 100%;
   height: 100%;
