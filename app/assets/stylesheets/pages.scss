@@ -1,3 +1,36 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.about {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.about {
+	font-size: 1.5em;
+}
+
+.authors {
+	margin-top: 50px;
+
+}
+.authors h1 {
+	margin-bottom: 50px;
+}
+.authors p {
+	margin-top: 10px;
+	font-size: 1.2em;
+}
+
+.logos {
+	margin-top: 50px;
+
+}
+.logos h1 {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.tech-stack {
+	padding: 20px;
+}
