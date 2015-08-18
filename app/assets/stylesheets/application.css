@@ -25,6 +25,11 @@
   font-family: logo;
   src: url(/fonts/slant.ttf);
  }
+
+ @font-face {
+  font-family: body;
+  src: url(/fonts/OpenSans-CondLight.ttf);
+ }
  /*----------------------------
     BUTTON STYLES
 -----------------------------*/
@@ -308,21 +313,40 @@ form #from-to-switcher:hover:after {
   position: relative;
   margin-top: -20px;
 }
-.logo {
-  font-family: logo;
-  font-size: 7em;
-  color: white;
-  text-shadow: 1px 1px 5px #38302d;
-  position: absolute;
-  top: 40%;
-  left: 40%;
-}
+
 .padding-left {
   padding-left: 50px;
 }
 .bottom {
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.header-title {
+  text-align: center;
+  color: white;
+  background-position: center;
+/*  background-size: cover;*/
+  padding: 10% 0;
+}
+
+.header-title-hgroup {
+  border: 1px solid white;
+  display: inline-block;
+  padding: 0.3em 1em 0.5em 1em;
+}
+
+.logo {
+  font-family: logo;
+  font-size: 9rem;
+  text-shadow: 1px 2px 4px #000000;
+}
+
+.tag-line {
+  font-family: body;
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 1px 2px 2px #000000;
 }
 
 
