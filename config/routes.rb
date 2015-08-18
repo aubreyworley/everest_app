@@ -6,15 +6,16 @@ Rails.application.routes.draw do
   get "/profile", to: "users#show"
   # get '/users/edit', to: "users#edit"
 
+  get "/about", to: "pages#about"
 
   # sessions routes
   get "/login", to: "sessions#new"
   get "/logout", to: "sessions#destroy"
-  # post "/sessions", to: "sessions#create" 
+  # post "/sessions", to: "sessions#create"
   resources :sessions
 
   resources :maps
-  root "pages#home" 
+  root "pages#home"
 end
 
 # Prefix Verb   URI Pattern                  Controller#Action
