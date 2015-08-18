@@ -1,35 +1,32 @@
 Welcome, <%= current_user.email %>
-
-<h1>Profile Page</h1>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 profile-section">
-        <h3>Saved Maps:</h3>
-          <% current_user.maps.each do |map| %> 
-            <p><%= map.title %></p>
-            <p><%= map.from %></p>
-            <p><%= map.to %></p>
-            <p><%= map.travel_mode %></p>
-            <p><%= map.measurement %></p>
-          <% end %>
+<h1>Your Profile</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h3>Saved Maps:</h3>
+      <% current_user.maps.each do |map| %> 
+      <div class="map-section">
+        <p><b>Title: </b><%= map.title %></p>
+        <p><b>From: </b><%= map.from %></p>
+        <p><b>To: </b><%= map.to %></p>
+        <p><b>Travel Mode: </b><%= map.travel_mode %></p>
+        <p><b> Measurement: </b><%= map.measurement %></p>
+        <p><b><%= link_to "See Your Route", map.url %></b></p>
       </div>
-      <div data-id="<%= current_user.id %>" class="col-md-4 profile">
-
-        <div class="col-md-1"></div>
-        <div class="col-md-3 profile-section text-center pull-left">
-          <div class="dropdown pull-left">
-            <button class="glyphicon glyphicon-chevron-down dropdown-toggle button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><%= link_to "Update Profile", edit_user_path(current_user) %></li>
-            </ul>
-          </div>
-            <h2><%= current_user.first_name %><%= " " %> <%= current_user.last_name %><span>
-              <hr class="style-one">
-            </h2>
-            <p> About: <%= @current_user.about %></p>
-        </div>
+      <% end %>
+    </div>
+    <div data-id="<%= current_user.id %>" class="col-md-4 profile-section">
+      
+      <div class="dropdown pull-left">
+        <button class="glyphicon glyphicon-chevron-down dropdown-toggle button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><%= link_to "Update Profile", edit_user_path(current_user) %></li>
+        </ul>
       </div>
+      <p><%= current_user.first_name %><%= " " %><%= current_user.last_name %></p>
+      <hr class="style-one">
+      <p> About: <%= @current_user.about %></p>
+    </div>
   </div>
 </div>
