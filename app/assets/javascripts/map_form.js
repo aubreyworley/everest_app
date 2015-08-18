@@ -4,16 +4,20 @@ $(function(){
 		var to = $('#to').val();
 		var travelMode = $('#travel-mode').val();
 		var measurementMode = $('#measurement-mode').val();
+		// var title = $('#title');
+		var url = window.location.href;
 
 		$.ajax({
 			type: "POST",
 			url: '/maps',
 			data: {
 				map: {
+					// title: title,
 					from: from,
 					to: to,
 					travel_mode: travelMode,
-					measurement: measurementMode
+					measurement: measurementMode,
+					url: url
 				}
 			},
 			success: function(data) {
