@@ -5,8 +5,14 @@ Welcome, <%= current_user.email %>
   <div class="container">
     <div class="row">
       <div class="col-md-8 profile-section">
-        <h1>Saved Maps:</h1>
-        <p> <%= current_user.maps %></p>
+        <h3>Saved Maps:</h3>
+          <% current_user.maps.each do |map| %> 
+            <p><%= map.title %></p>
+            <p><%= map.from %></p>
+            <p><%= map.to %></p>
+            <p><%= map.travel_mode %></p>
+            <p><%= map.measurement %></p>
+          <% end %>
       </div>
       <div data-id="<%= current_user.id %>" class="col-md-4 profile">
 
