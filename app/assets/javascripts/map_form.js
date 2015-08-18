@@ -1,14 +1,14 @@
 $(function(){
-	$('#go').click(function() {
+	$('#go').on('click', function() {
 		$('#save').removeClass('hidden');
 	});
 
-	$('#save').click(function(){
+	$('#save').on('click', function(){
 		var from = $('#from').val();
 		var to = $('#to').val();
 		var travelMode = $('#travel-mode').val();
 		var measurementMode = $('#measurement-mode').val();
-		var title = $('#title');
+		var title = $('#title').val();
 		var url = window.location.href;
 
 		$.ajax({
