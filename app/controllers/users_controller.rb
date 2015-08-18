@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @maps = current_user.maps
   end
 
   def edit

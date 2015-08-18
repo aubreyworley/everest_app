@@ -1,11 +1,11 @@
-Welcome, <%= current_user.email %> 
+Welcome, <%= current_user.email %>
 
 <h1>Profile Page</h1>
- 
+
   <div class="container">
     <div class="row">
       <div class="col-lg-4 profile">
-      
+
         <div class="col-md-1"></div>
         <div class="col-md-3 profile-section text-center pull-left">
           <div class="dropdown pull-left">
@@ -18,12 +18,9 @@ Welcome, <%= current_user.email %>
             <h2><%= current_user.first_name %><%= " " %> <%= current_user.last_name %><span>
               <hr class="style-one">
               <p> About: <%= @current_user.about %></p>
+              <p> Saved Maps: <%= current_user.maps %></p>
             </h2>
         </div>
-      </div> 
+      </div>
   </div>
 </div>
-
-  
-
-
