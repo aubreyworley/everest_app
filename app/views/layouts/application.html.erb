@@ -15,11 +15,11 @@
 </head>
 <body>
 <!-- top navbar -->
-  <nav class="navbar">
+  <nav class="navbar navbar-fixed-top">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <a class="navbar-brand" href="/"></a>
+        <a class="navbar-brand" href="/">EVEREST</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -29,8 +29,9 @@
             <% if current_user %>
               <a href="/logout" class="btn">Log Out</a>
             <% else %>
-              <button type="button" data-toggle="modal" data-target="#loginUpModal"class="btn btn-dark navbar-btn">Login</button>
-              <button type="button" data-toggle="modal" data-target="#signUpModal"class="btn btn-dark navbar-btn">Sign Up</button>
+            <li>
+              <a href="/login" class="btn">Log In</a>
+            </li>
             <% end %>
           </li>
           <li class="dropdown">
