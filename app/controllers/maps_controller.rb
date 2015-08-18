@@ -9,6 +9,7 @@ class MapsController < ApplicationController
     if @map.save
       render json: @map
     else
+      flash[:error] = "Oops! Try saving your map again."
       render json: { errors: @map.errors.full_messages }, status: :unprocessable_entity
     end
   end

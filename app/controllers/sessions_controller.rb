@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  
+
   def new
     if current_user
       redirect_to profile_path
@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
   def create
     user_params = params.require(:user)
     user = User.find_by_email(user_params[:email])
-    
+
     # If the user exists AND the password entered is correct.
     if user && user.authenticate(user_params[:password])
       # Save the user id inside the browser cookie. This is how we keep the user
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
       redirect_to profile_path
     else
     # If user's login doesn't work, send them back to the login form.
-      flash[:error] = "Failed To Authenticate. Please try again."
+      flash[:error] = "Oops! Check your email and password and try again!"
       redirect_to '/login'
     end
   end

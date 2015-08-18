@@ -23,6 +23,7 @@ class UsersController < ApplicationController
         session[:user_id] = user.id
         redirect_to profile_path
       else
+        flash[:error] = "Oops! Try again to save your account!"
         redirect_to signup_path
       end
     end
@@ -40,6 +41,7 @@ class UsersController < ApplicationController
       form_params = params.require(:user).permit(:first_name, :last_name, :user_name, :email, :about)
       current_user.update_attributes(form_params)
       redirect_to profile_path
+      flash[:success] = "Profile successfully updated!"
     else
       redirect_to '/'
     end
