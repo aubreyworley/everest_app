@@ -8,7 +8,7 @@ $(function(){
 		var to = $('#to').val();
 		var travelMode = $('#travel-mode').val();
 		var measurementMode = $('#measurement-mode').val();
-		// var title = $('#title');
+		var title = $('#title');
 		var url = window.location.href;
 
 		$.ajax({
@@ -16,7 +16,7 @@ $(function(){
 			url: '/maps',
 			data: {
 				map: {
-					// title: title,
+					title: title,
 					from: from,
 					to: to,
 					travel_mode: travelMode,
