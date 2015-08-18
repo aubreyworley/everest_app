@@ -1,37 +1,4 @@
- 
-  <!-- top navbar -->
-  <nav class="navbar">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/"></a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <% if current_user %>
-              <a href="/logout" class="btn">Log Out</a>
-            <% else %>
-              <button type="button" data-toggle="modal" data-target="#loginUpModal"class="btn btn-dark navbar-btn">Login</button>
-              <button type="button" data-toggle="modal" data-target="#signUpModal"class="btn btn-dark navbar-btn">Sign Up</button>
-            <% end %>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="/about">About</a></li>
-              <li><a href="/profile">Profile</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div>
-  </nav>
-  <!-- top navbar end --> 
-
-  <div class="col-md-12" id="landing-img">
+   <div class="col-md-12" id="landing-img">
     <div class="container-fluid">
       <h1 class="logo">EVEREST</h1>
     </div>
@@ -47,13 +14,13 @@
         <div id="target" class="place-inputs">
           <div class="place-input">
             <label>
-              From: <input id="from" type="text" placeholder="Nob Hill, San Francisco, CA">
+              From: <input class="direction-input" id="from" type="text" placeholder="Nob Hill, San Francisco, CA">
             </label>
           </div>
-          <!-- <div id="from-to-switcher"></div> -->
+          <div id="from-to-switcher"></div>
           <div class="place-input">
             <label>
-              To: <input id="to" type="text" placeholder="Russian Hill, San Francisco, CA">
+              To: <input class="direction-input" id="to" type="text" placeholder="Russian Hill, San Francisco, CA">
             </label>
           </div>
         </div>
@@ -150,11 +117,6 @@
 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDXj3FxJkwYjszaD_xk5c_l8CAqjCRfno4"></script>
 
-<!-- &libraries=places&callback=initAutocomplete -->
-
-<!-- <script src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>  -->
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
  <!-- link to themed version of bootstrap hosted on the internet -->
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
