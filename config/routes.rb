@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   root "pages#home"
 end
 
-# Prefix Verb   URI Pattern                  Controller#Action
+#       Prefix Verb   URI Pattern                  Controller#Action
 #        users GET    /users(.:format)             users#index
 #              POST   /users(.:format)             users#create
 #     new_user GET    /users/new(.:format)         users#new
@@ -28,6 +28,7 @@ end
 #              PUT    /users/:id(.:format)         users#update
 #       signup GET    /signup(.:format)            users#new
 #      profile GET    /profile(.:format)           users#show
+#        about GET    /about(.:format)             pages#about
 #        login GET    /login(.:format)             sessions#new
 #       logout GET    /logout(.:format)            sessions#destroy
 #     sessions GET    /sessions(.:format)          sessions#index

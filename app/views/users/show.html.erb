@@ -4,7 +4,11 @@ Welcome, <%= current_user.email %>
 
   <div class="container">
     <div class="row">
-      <div data-id="<%= current_user.id %>" class="col-lg-4 profile">
+      <div class="col-md-8 profile-section">
+        <h1>Saved Maps:</h1>
+        <p> <%= current_user.maps %></p>
+      </div>
+      <div data-id="<%= current_user.id %>" class="col-md-4 profile">
 
         <div class="col-md-1"></div>
         <div class="col-md-3 profile-section text-center pull-left">
@@ -17,9 +21,8 @@ Welcome, <%= current_user.email %>
           </div>
             <h2><%= current_user.first_name %><%= " " %> <%= current_user.last_name %><span>
               <hr class="style-one">
-              <p> About: <%= @current_user.about %></p>
-              <p> Saved Maps: <%= current_user.maps %></p>
             </h2>
+            <p> About: <%= @current_user.about %></p>
         </div>
       </div>
   </div>

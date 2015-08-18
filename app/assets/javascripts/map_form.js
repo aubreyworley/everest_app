@@ -1,18 +1,25 @@
 $(function(){
-	$('#go').click(function(){
+	$('#save').click(function(){
 		var from = $('#from').val();
 		var to = $('#to').val();
 		var travelMode = $('#travel-mode').val();
 		var measurementMode = $('#measurement-mode').val();
-		// console.log(to);
-		// console.log(travelMode);
 
 		$.ajax({
 			type: "POST",
-			url: '/profile',
-			
-
-		})
+			url: '/maps',
+			data: {
+				map: {
+					from: from,
+					to: to,
+					travel_mode: travelMode,
+					measurement: measurementMode
+				}
+			},
+			success: function(data) {
+				console.log(data);
+			}
+		});
 
 	})
 });

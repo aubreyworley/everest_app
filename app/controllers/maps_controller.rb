@@ -25,7 +25,7 @@ class MapsController < ApplicationController
 
   private
     def map_params
-      params.require(:map).permit(:user_id)
+      params.require(:map).permit(:user_id, :to, :from, :measurement, :travel_mode)
     end
 
 end
