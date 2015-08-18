@@ -1,4 +1,8 @@
 $(function(){
+	$('#go').click(function() {
+		$('#save').removeClass('hidden');
+	});
+
 	$('#save').click(function(){
 		var from = $('#from').val();
 		var to = $('#to').val();
