@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+ /*----------------------------
+    GLOBAL STYLES
+-----------------------------*/
  html, body {
   width: 100%;
   height: 100%;
@@ -22,6 +25,55 @@
   font-family: logo;
   src: url(/fonts/slant.ttf);
  }
+ /*----------------------------
+    BUTTON STYLES
+-----------------------------*/
+
+.btn-dark {
+    border-radius: 0;
+    color: #fff;
+    background-color: rgba(0,0,0,.7);
+}
+
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark:active {
+    color: #fff;
+    background-color: rgba(0,0,0,1);
+}
+
+/*----------------------------
+    NAVBAR STYLES
+-----------------------------*/
+.navbar-brand {
+    /*background: url(../img/logo/logo.png) no-repeat;*/
+    background-size: 100%;
+    position: absolute;
+    top: 0px;
+    left: 30px;
+    padding-right: 100px;
+    padding-top: 100px;
+    padding-bottom: -10px;
+}
+.navbar-inner {
+  background:transparent;
+}
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+  background-color: transparent;
+  color: white;
+}
+.nav a, .nav a:focus, .nav a:hover {
+  background-color: transparent;
+  color: black;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+  background-color: transparent;
+  color: white;
+}
+
+/*----------------------------
+    MAP STYLES
+-----------------------------*/
 
  #map-canvas {
   width: 600px;
@@ -87,9 +139,9 @@ form #from-to-switcher {
   position: relative;
   height: 16px;
   width: 16px;
-  margin-top: -5px;
-  margin-left: 75%;
-  margin-bottom: -10px;
+  margin-left: 0px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   cursor: pointer;
 }
 
@@ -99,12 +151,12 @@ form #from-to-switcher:after {
   position: absolute;
   top: 0;
   left: 0;
-  /*background-image: url(../img/fromToSwitcher.png);*/
+  background-image: url(/sort.png);
   background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
+  width: 25px;
+  height: 25px;
   opacity : 0.45;
-  z-index: -1;
+  z-index: 1;
 }
 
 form #from-to-switcher:hover:after {
