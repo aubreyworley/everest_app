@@ -1,18 +1,33 @@
 $(function(){
-	$('#go').click(function(){
+	$('#go').click(function() {
+		$('#save').removeClass('hidden');
+	});
+
+	$('#save').click(function(){
 		var from = $('#from').val();
 		var to = $('#to').val();
 		var travelMode = $('#travel-mode').val();
 		var measurementMode = $('#measurement-mode').val();
-		// console.log(to);
-		// console.log(travelMode);
+		// var title = $('#title');
+		var url = window.location.href;
 
 		$.ajax({
 			type: "POST",
-			url: '/profile',
-			
-
-		})
+			url: '/maps',
+			data: {
+				map: {
+					// title: title,
+					from: from,
+					to: to,
+					travel_mode: travelMode,
+					measurement: measurementMode,
+					url: url
+				}
+			},
+			success: function(data) {
+				console.log(data);
+			}
+		});
 
 	})
 });
