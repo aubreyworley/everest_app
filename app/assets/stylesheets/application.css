@@ -72,8 +72,75 @@
   color: white;
 }
 
+
+/*EVERYTHING BELOW IS STYLING FOR THE MAIN HOMEPAGE*/
+
 /*----------------------------
-    MAP STYLES
+    SPLASH STYLE SECTION
+-----------------------------*/
+
+#landing-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url(/landing.jpg);
+  background-size: cover;
+  position: relative;
+  margin-top: -20px;
+}
+
+.header-title {
+  text-align: center;
+  color: white;
+  background-position: center;
+  padding: 10% 0;
+}
+
+.header-title-hgroup {
+  border: 1px solid white;
+  display: inline-block;
+  padding: 0.3em 1em 0.5em 1em;
+}
+
+.logo {
+  font-family: logo;
+  font-size: 9rem;
+  text-shadow: 1px 2px 4px #000000;
+}
+
+.tag-line {
+  font-family: body;
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 1px 2px 2px #000000;
+}
+
+/*----------------------------
+    MAP INPUT BAR STYLES
+-----------------------------*/
+.map-section {
+  margin-top: 50px;
+}
+.nav-header {
+  padding-bottom: 30px;
+}
+.map-nav {
+  padding-bottom: 50px;
+}
+.map-nav label {
+  font-size: 1.5em;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.map-nav input {
+  width: 350px;
+  font-size: 1em;
+}
+#go {
+  margin-left: 20px;
+}
+/*----------------------------
+    MAP AND CHART SIZE
 -----------------------------*/
 
  #map-canvas {
@@ -89,10 +156,9 @@
   height: 250px;
 }
 
-.table {
-  margin-left: 0px;
-  margin-bottom: 0px;
-}
+/*----------------------------
+    KEY STYLES
+-----------------------------*/
 
 .color-index {
   width: 40px;
@@ -115,43 +181,20 @@
   background-color: #000000;
 }
 
-/* Fix for google maps info window */
-#map-canvas img {
-  max-width: none;
-}
-#map-canvas label {
-  width: auto;
-  display: inline;
-}
-
-.slope {
-  margin: 10px;
-}
-
-form#routes .span3 {
-  padding-top: 50px;
-}
-
-.direction-input {
-  width: 480px;
-}
+/*----------------------------
+    SWITCHER STYLES
+-----------------------------*/
 
 form #from-to-switcher {
   position: relative;
-  height: 16px;
-  width: 16px;
-  margin-left: 0px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  height: 25px;
+  width: 25px;
   cursor: pointer;
 }
 
 form #from-to-switcher:after {
   content : "";
-  display: block;
   position: absolute;
-  top: 0;
-  left: 0;
   background-image: url(/sort.png);
   background-repeat: no-repeat;
   width: 25px;
@@ -164,193 +207,12 @@ form #from-to-switcher:hover:after {
   opacity : 1;
 }
 
-.btn {
-  border-radius: 30px;
-  margin-bottom: 20px;
-}
-
-.slope-label {
-  position: relative;
-  top: -30px;
-  right: -320px;
-}
-
-#content {
-  width:  100px;
-  height: 100px;
-}
-
-#author {
-  margin-top: 20px;
-  font-size: 12px;
-  color: #999;
-}
-
-#travel-mode, #measurement-mode {
-  width: 100px;
-  margin-left: 10px;
-  margin-top: 11px;
-}
-
-.selector-wrapper{
-  width: 400px;
-}
-
-.selector-wrapper input, .selector-wrapper label{
-  display:inline-block;
-}
-
-#travel-label {
-  margin-bottom: 5px;
-}
-
-#distance {
-  margin-top: 10px;
-}
+/*----------------------------
+    TRAVEL DISPLAY STYLES
+-----------------------------*/
 
 .travel-info {
   display: none;
-}
-
-/* Portrait phones */
-@media (max-width: 320px){
-  .selector-wrapper{
-    width: 100%;
-  }
-  
-  th, td{
-    font-size: 0.9em;
-  }
-}
-
-/* Landscape phones and down */
-@media (max-width: 768px) { 
-
-  #map-canvas {
-    width: 100%;
-    height: 350px;
-  } 
-
-  #from,
-  #to {
-    width: 100%;
-  }
-
-  .table {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  #slope_chart,
-  #elevation_chart {
-    width: 100%;
-    height: 250px;
-  }
-
-  #github {
-    visibility: hidden;
-  }
-  
-  .selector-wrapper{
-    width: 240px;
-  }
-
-}
-
-@media (min-width: 769px) and (max-width: 980px) {
-#map-canvas {
-    width: 100%;
-    height: 350px;
-  } 
-
-  #from,
-  #to {
-    width: 300px;
-  }
-
-  .table {
-    width: 300px;
-    margin-left: 0px;
-  }
-
-  #slope_chart,
-  #elevation_chart {
-    width: 750px;
-    height: 175px;
-  }
-
-}
-
-@media (min-width: 981px) and (max-width: 1200px) {
-#map-canvas {
-    width: 500px;
-    height: 350px;
-  } 
-
-  #from,
-  #to {
-    width: 300px;
-  }
-
-  .table {
-    width: 300px;
-    padding-right: 100px;
-  }
-
-  #slope_chart,
-  #elevation_chart {
-    width: 470px;
-    height: 175px;
-  }
-
-  form #from-to-switcher {
-    margin-left: 50%;
-  }
-}
-
-#landing-img {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-image: url(/landing.jpg);
-  background-size: cover;
-  position: relative;
-  margin-top: -20px;
-}
-
-.padding-left {
-  padding-left: 50px;
-}
-.bottom {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-.header-title {
-  text-align: center;
-  color: white;
-  background-position: center;
-/*  background-size: cover;*/
-  padding: 10% 0;
-}
-
-.header-title-hgroup {
-  border: 1px solid white;
-  display: inline-block;
-  padding: 0.3em 1em 0.5em 1em;
-}
-
-.logo {
-  font-family: logo;
-  font-size: 9rem;
-  text-shadow: 1px 2px 4px #000000;
-}
-
-.tag-line {
-  font-family: body;
-  font-size: 3rem;
-  font-weight: 700;
-  text-shadow: 1px 2px 2px #000000;
 }
 
 
