@@ -121,11 +121,14 @@
 .map-section {
   margin-top: 50px;
 }
+.map-section h1 {
+  font-size: 1.5em;
+}
 .nav-header {
-  padding-bottom: 30px;
+  padding-bottom: 10px;
 }
 .map-nav {
-  padding-bottom: 50px;
+  padding-bottom: 10px;
 }
 .map-nav label {
   font-size: 1.5em;
@@ -133,11 +136,14 @@
   margin-left: 10px;
 }
 .map-nav input {
-  width: 350px;
+  width: 270px;
   font-size: 1em;
 }
 #go {
   margin-left: 20px;
+}
+.table {
+  width: 200px;
 }
 /*----------------------------
     MAP AND CHART SIZE
