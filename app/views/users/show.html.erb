@@ -37,6 +37,7 @@ Welcome, <%= current_user.email %>
             <li><%= link_to "Update Profile", edit_user_path(current_user) %></li>
           </ul>
         </div>
+        <p><%= image_tag current_user.profile_image.url(:medium) %></p>
         <p><%= current_user.first_name %><%= " " %><%= current_user.last_name %></p>
         <hr class="style-one">
         <p> About: <%= @current_user.about %></p>

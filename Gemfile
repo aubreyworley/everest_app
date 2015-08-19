@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# paperclip
+gem "paperclip", "~> 4.3"
+
 # font awesome
 gem 'font-awesome-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
