@@ -6,7 +6,7 @@ Welcome, <%= current_user.email %>
     <div class="row">
       <div class="col-md-8">
         <h3>Saved Maps:</h3>
-          <% current_user.maps.each do |map| %>
+          <% @maps.each do |map| %>
           <div class="map-section">
             <p><b>Title: </b><%= map.title %></p>
             <p><b>From: </b><%= map.from %></p>
@@ -14,6 +14,7 @@ Welcome, <%= current_user.email %>
             <p><b>Travel Mode: </b><%= map.travel_mode %></p>
             <p><b> Measurement: </b><%= map.measurement %></p>
             <p><b><%= link_to "See Your Route", map.url %></b></p>
+            <p><b><%= link_to "Update Map", edit_map_path(map) %>
             <p><b> <%= link_to "Delete", map, method: :delete %>
           </div>
           <% end %>
