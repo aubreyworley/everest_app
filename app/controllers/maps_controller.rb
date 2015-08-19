@@ -1,7 +1,6 @@
 class MapsController < ApplicationController
 
   def new
-
     render :new
   end
 
@@ -34,7 +33,7 @@ class MapsController < ApplicationController
       flash[:success] = "Map successfully updated!"
     else
       redirect_to profile_path
-      flash[:error] = "Oops! Try again!"
+      flash[:error] = "Oops! Try updating again!"
     end
   end
 
