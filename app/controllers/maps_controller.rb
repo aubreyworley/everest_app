@@ -19,6 +19,24 @@ class MapsController < ApplicationController
     render json: @map
   end
 
+  def edit
+    map_id = params[:id]
+    @map = Map.find(map_id)
+  end
+
+  def update
+    map_id = params[:id]
+    map = Map.find(map_id)
+    update_params = params.require(:map).permit(:title)
+    if map.update_attributes(update_params)
+      redirect_to profile_path
+      flash[:success] = "Map successfully updated!"
+    else
+      redirect_to profile_path
+      flash[:error] = "Oops! Try again!"
+    end
+  end
+
   def destroy
     Map.find(params[:id]).destroy
     redirect_to profile_path

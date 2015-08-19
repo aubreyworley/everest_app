@@ -1,0 +1,10 @@
+<%= form_for @map do |f| %>
+
+  <!-- Enables flash messages within the form for superior UX -->
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: "alert #{name == 'error' ? 'alert-danger' : 'alert-notice'}" %>
+  <% end %>
+
+  <%= f.text_field :title, placeholder: "Title" %><br>
+  <%= f.submit "Update Map" %>
+<% end %>

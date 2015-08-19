@@ -30,7 +30,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @maps = current_user.maps
+    @maps = current_user.maps.order(created_at: :desc)
+    # .page(params[:page]).per(10)
   end
 
   def edit
