@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 # paperclip
 gem "paperclip", "~> 4.3"
-
+# SDK for S3
+gem 'aws-sdk', '~> 1.6'
 # font awesome
 gem 'font-awesome-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -37,6 +38,9 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+
+  gem 'dotenv-rails'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -49,4 +53,3 @@ group :development, :test do
   gem 'ffaker'
   gem 'factory_girl_rails'
 end
-
