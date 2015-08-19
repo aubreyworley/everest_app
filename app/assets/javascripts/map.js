@@ -75,7 +75,8 @@ function initialize_maps() {
         hideRouteList: true,
         polylineOptions: {
             strokeOpacity: 0
-        }
+        },
+        suppressBicyclingLayer: true
     };
     // Initialize the directions renderer.
     directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
@@ -85,7 +86,7 @@ function initialize_maps() {
         zoom: 13,
         // Disables zoom and streetview bar but can stil zoom with mouse.
         disableDefaultUI: false,
-        mapTypeId: google.maps.MapTypeId.HYBRID
+        mapTypeId: google.maps.MapTypeId.TERRAIN
     };
     // Create a google maps object.
     map = new google.maps.Map(mapCanvas, mapOptions);
@@ -147,7 +148,7 @@ function updateRoutes() {
     if (updating) return;
     updating = true;
     setTimeout(function () { updating = false; }, 100);
-    console.log("Updating routes");
+    // console.log("Updating routes");
     // Check if the path has been populated, if it has been already
     // populated, clear it.
 
