@@ -2,7 +2,7 @@
 <div class="col-md-4">
 	<h3>Log In</h3>
 	<hr>
-	<%= form_for :user, url: sessions_path do |f| %>
+	<%= form_for :user, url: sessions_path, :html => {:id => "login-form"} do |f| %>
 	  <div class="form-group">
 
 			<% flash.each do |name, msg| %>

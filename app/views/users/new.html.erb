@@ -2,7 +2,7 @@
 <div class="col-md-4">
 	<h3> Sign Up </h3>
 	<hr>
-	<%= form_for @user do |f| %>
+	<%= form_for @user, :html => {:id => "signup-form"} do |f| %>
 	<div class="form-group">
 
     <!-- Enables flash messages within the form for superior UX -->
