@@ -4,112 +4,119 @@
       <h2 class="tag-line header-title-hgroup">Elevate your route</h2>
     </div>
   </div>
+
   <div class="container-fluid">
-    <div class="map-section">
-      <div class="nav-header">
+    <div class="">
+      <div class="col-md-10">
+       <div class="nav-header">
         <h1>CREATE YOUR ROUTE:</h1>
       </div>
-      <form class="form-inline" id="routes">
-        <div class="map-nav">
-          <div class="form-group">
-            <label>
-              From: <input id="from" type="text" placeholder="Nob Hill, San Francisco, CA">
-            </label>
+      <div class="map-section">
+        <form class="form-inline" id="routes">
+          <div class="map-nav">
+            <div class="form-group">
+              <label>
+                From: <input id="from" type="text" placeholder="Nob Hill, San Francisco, CA">
+              </label>
+            </div>
+            <div class="form-group" id="from-to-switcher"></div>
+            <div class="form-group">
+              <label>
+                To: <input id="to" type="text" placeholder="Russian Hill, San Francisco, CA">
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="travel-mode">Travel mode:</label>
+              <select id="travel-mode">
+                <option>Bicycling</option>
+                <option>Walking</option>
+                <option>Driving</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="measurement-mode">Units:</label>
+              <select id="measurement-mode">
+                <option value="miles">Miles</option>
+                <option value="km">Kilometres</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <button id="go">Go</button>
+            </div>
+            <div class="hidden form-group" id="save">
+              <input id="title" type="text" placeholder="My running route">
+              <button>Save</button>
+            </div>
           </div>
-          <div class="form-group" id="from-to-switcher"></div>
-          <div class="form-group">
-            <label>
-              To: <input id="to" type="text" placeholder="Russian Hill, San Francisco, CA">
-            </label>
-          </div>
-          <div class="form-group">
-            <label for="travel-mode">Travel mode:</label>
-            <select id="travel-mode">
-              <option>Bicycling</option>
-              <option>Walking</option>
-              <option>Driving</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="measurement-mode">Units:</label>
-            <select id="measurement-mode">
-              <option value="miles">Miles</option>
-              <option value="km">Kilometres</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <button id="go">Go</button>
-          </div>
-          <div class="hidden form-group" id="save">
-            <input id="title" type="text" placeholder="My running route">
-            <button>Save</button>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
 
-  <div class="col-md-12">
-    <div class="col-md-7">
+  <div class="">
+    <div class="col-md-2">
+      <table class="table">
+        <th>
+          <td>Difficulty</td>
+          <td>% Grade</td>
+        </th>
+        <tr>
+          <td><div class="color-index" id="green"</div></td>
+          <td>Easy</td>
+          <td>&lt;5%</td>
+        </tr>
+        <tr>
+          <td><div class="color-index" id="yellow"</div></td>
+          <td>Moderate</td>
+          <td>5-10%</td>
+        </tr>
+        <tr>
+          <td><div class="color-index" id="blue"</div></td>
+          <td>Difficult</td>
+          <td>10-15%</td>
+        </tr>
+        <tr>
+          <td><div class="color-index" id="red"</div></td>
+          <td>Very Difficult</td>
+          <td>15-20%</td>
+        </tr>
+        <tr>
+          <td><div class="color-index" id="black"</div></td>
+          <td>Too *wheeze* steep</td>
+          <td>&gt;20%</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-12">
+  <div class="col-md-7">
+    <div>
+      <div id="map-canvas"></div>
+    </div>
+    <div class="row">
       <div>
-        <div id="map-canvas"></div>
+        Distance:
+        <span id="distance"></span>
       </div>
     </div>
-    <div class="col-md-5">
-      <div>
-        <table class="table">
-          <th>
-            <td>Difficulty</td>
-            <td>% Grade</td>
-          </th>
-          <tr>
-            <td><div class="color-index" id="green"</div></td>
-            <td>Easy</td>
-            <td>&lt;5%</td>
-          </tr>
-          <tr>
-            <td><div class="color-index" id="yellow"</div></td>
-            <td>Moderate</td>
-            <td>5-10%</td>
-          </tr>
-          <tr>
-            <td><div class="color-index" id="blue"</div></td>
-            <td>Difficult</td>
-            <td>10-15%</td>
-          </tr>
-          <tr>
-            <td><div class="color-index" id="red"</div></td>
-            <td>Very Difficult</td>
-            <td>15-20%</td>
-          </tr>
-          <tr>
-            <td><div class="color-index" id="black"</div></td>
-            <td>Too *wheeze* steep</td>
-            <td>&gt;20%</td>
-          </tr>
-        </table>
-        <div class="row">
-          <div>
-            Distance:
-            <span id="distance"></span>
-          </div>
-        </div>
-        <div class="row">
-          <div id="travel-label">
-            Travel Time:
-            <span id="travel-time"></span>
-          </div>
-        </div>
+    <div class="row">
+      <div id="travel-label">
+        Travel Time:
+        <span id="travel-time"></span>
       </div>
     </div>
   </div>
-  <div class="col-md-12">
+  <div class="col-md-5">
     <div class="row">
       <div>
         <div id="elevation_chart"></div>
         <div id="slope_chart"></div>
       </div>
     </div>
+  </div>
+  <div class="col-md-12">
   </div>
 
 <!-- <div id="directionsPanel"></div>
