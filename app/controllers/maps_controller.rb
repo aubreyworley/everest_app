@@ -1,6 +1,7 @@
 class MapsController < ApplicationController
 
   def new
+
     render :new
   end
 
