@@ -2,12 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.about-section {
+	margin-top: 100px;
+}
 .about {
 	margin-top: 50px;
 	margin-bottom: 50px;
 }
 .about {
-	font-size: 1.5em;
+	font-size: 25px;
 }
 
 .authors {
@@ -20,11 +23,12 @@
 	font-family: body-header;
 }
 .authors h4 {
+	font-size: 2em;
 	font-family: body-header;
 }
 .authors p {
 	margin-top: 10px;
-	font-size: 1.2em;
+	font-size: 25px;
 	font-family: body;
 }
 
@@ -39,6 +43,11 @@
 	font-size: 2em;
 }
 
-.tech-stack {
+.tech {
 	padding: 20px;
+	margin-bottom: 100px;
+}
+
+.portrait {
+	margin-bottom: 20px;
 }
