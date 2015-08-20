@@ -34,6 +34,11 @@ $(function(){
 	$('#saveModal').on('shown.bs.modal', function () {
 		$('#title').focus()
 	})
+
+	$('#save-changes').on('click', function(){
+		$('#saveModal').modal('hide');
+	});
+
 });
 
 // $('#submit').on('submit', function (event) {
