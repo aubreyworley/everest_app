@@ -4,7 +4,7 @@
 
 .profile-page {
   position: relative;
-  background-color: #F9EAC8;
+  background-color: #F5F8FA;
   padding-bottom: 100px;
 }
 
@@ -25,14 +25,22 @@
   margin-top: 50px;
   background-color: white;
   border-style: solid;
-  border-width: 10px;
-  border-color: white;
+  border-width: 1px;
+  border-color: #c6c6c6;
   border-radius: 10px;
-  padding: 20px;
+  padding: 40px;
+}
+.map-section button {
+  font-family: body;
+  font-size: 15px;
 }
 .profile-welcome {
   font-family: body-header;
   font-size: 25px;
+}
+
+.profile-welcome a {
+  font-family: body;
 }
 
 .post-header {
