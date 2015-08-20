@@ -148,7 +148,7 @@
   padding-bottom: 10px;
 }
 .map-nav label {
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin-right: 10px;
   margin-left: 10px;
 }
@@ -260,4 +260,12 @@ form #from-to-switcher:hover:after {
 
 #save-alert {
   color: green;
+}
+
+/*----------------------------
+    MODAL DISPLAY STYLES
+-----------------------------*/
+
+.modal-body div {
+  margin-bottom: 20px;
 }
