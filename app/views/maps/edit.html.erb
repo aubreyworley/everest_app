@@ -1,6 +1,6 @@
 <div class="col-md-4"></div>
 <div class="col-md-4">
-	<h1>Edit Profile</h1>
+	<h1>Edit Map Title</h1>
 	<hr>
 	<%= form_for @map do |f| %>
 	<div class="form-group">
@@ -10,8 +10,7 @@
 		<% end %>
 
 		<%= f.text_field :title, placeholder: "Title", class: "form-control" %><br>
-		<%= f.submit "Update Map", class: "btn btn-primary" %>
-		<%= link_to 'Back', profile_path, class: "btn btn-primary" %>
+		<%= f.submit "Update Title", class: "btn btn-primary" %>
 		<% end %>
 	</div>
 </div>

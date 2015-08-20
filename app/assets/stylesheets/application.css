@@ -41,6 +41,9 @@
   font-family: body-header;
   src: url(/fonts/Chunkfive.otf);
  }
+ .footer {
+  margin-bottom: 200px;
+ }
  /*----------------------------
     BUTTON STYLES
 -----------------------------*/
@@ -175,16 +178,17 @@
 
 #slope_chart,
 #elevation_chart {
+
   width: 450px;
   height: 200px;
 }
 .table-con {
-  margin-right: 20px;
+  margin-right: 0px;
   margin-left: 20px;
 }
 .table {
   margin-top: 10px;
-  width: 150px;
+  width: 120px;
 }
 
 /*----------------------------
