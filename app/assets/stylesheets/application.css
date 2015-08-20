@@ -16,11 +16,12 @@
  /*----------------------------
     GLOBAL STYLES
 -----------------------------*/
-@import "font-awesome-sprockets";
+
 @import "font-awesome";
 
  html, body {
-  margin-top: 50px;
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
   font-family: body;
@@ -33,12 +34,12 @@
 
  @font-face {
   font-family: body;
-  src: url(/fonts/OpenSans-CondLight.ttf);
+  src: url(/fonts/Arimo-Regular.ttf);
  }
 
  @font-face {
   font-family: body-header;
-  src: url(/fonts/ArmWrestler.ttf);
+  src: url(/fonts/Chunkfive.otf);
  }
  /*----------------------------
     BUTTON STYLES
@@ -124,16 +125,17 @@
 /*----------------------------
     MAP INPUT BAR STYLES
 -----------------------------*/
-.map-section {
+.map {
   margin-top: 50px;
 }
-.map-section h1 {
+.map h1 {
   font-size: 1.5em;
 }
 .nav-header {
   padding-bottom: 10px;
 }
 .nav-header h1 {
+  margin-top: 50px;
   font-family: body-header;
 }
 .map-nav {
@@ -145,30 +147,38 @@
   margin-left: 10px;
 }
 .map-nav input {
-  width: 270px;
-  font-size: 1em;
+  width: 500px;
+  font-size: 1.2em;
 }
 #go {
   margin-left: 20px;
 }
-.table {
-  width: 200px;
-}
 /*----------------------------
-    MAP AND CHART SIZE
+    MAP, TABLE, AND CHART SIZE
 -----------------------------*/
-
- #map-canvas {
-  width: 600px;
-  height: 400px;
+.charts {
+  margin-top: 50px;
+}
+ .map-canvas-container {
+  width: 900px;
+  height: 700px;
+  position: relative;
+}
+#map-canvas {
+  width: 900px;
+  height: 700px;
   background-color: #CCC;
-
 }
 
 #slope_chart,
 #elevation_chart {
-  width: 500px;
-  height: 250px;
+  width: 600px;
+  height: 300px;
+}
+.table {
+  margin-top: 10px;
+  margin-left: 40px;
+  width: 200px;
 }
 
 /*----------------------------
@@ -229,5 +239,14 @@ form #from-to-switcher:hover:after {
 .travel-info {
   display: none;
 }
+.labels {
+  margin-left: 40px;
+  font-size: 1.8em;
+  font-family: body-header;
+}
+.labels span {
+  font-family: body;
+}
+
 
 
