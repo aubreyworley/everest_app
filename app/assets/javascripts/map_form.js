@@ -3,25 +3,39 @@ $(function(){
 		$('#save').removeClass('hidden');
 	});
 
+	// var from = null;
+	// var to = null;
+	// var travelMode = null;
+	// var measurementMode = null;
+	// var title = null;
+	// var url = null;
+
 	$('#save').on('click', function(){
 		var from = $('#from').val();
 		var to = $('#to').val();
 		var travelMode = $('#travel-mode').val();
 		var measurementMode = $('#measurement-mode').val();
-		var title = $('#title').val();
-		var url = window.location.href;
+		var title = $('#title-pop').val();
+
+		$('#from-pop').val(from);
+		$('#to-pop').val(to);
+		$('#travel-mode-pop').val(travelMode);
+		$('#measurement-mode-pop').val(measurementMode);
+	});
+
+	$('#save-changes').on('click', function(){
 
 		$.ajax({
 			type: "POST",
 			url: '/maps',
 			data: {
 				map: {
-					title: title,
-					from: from,
-					to: to,
-					travel_mode: travelMode,
-					measurement: measurementMode,
-					url: url
+					title: $('#title-pop').val(),
+					from: $('#from-pop').val(),
+					to: $('#to-pop').val(),
+					travel_mode: $('#travel-mode-pop').val(),
+					measurement: $('#measurement-mode-pop').val(),
+					url: window.location.href
 				}
 			},
 			success: function(data) {
@@ -29,11 +43,22 @@ $(function(){
 			}
 		});
 
-	})
+	});
 
-	$('#saveModal').on('shown.bs.modal', function () {
-		$('#title').focus()
-	})
+		// var savedMap = {
+		// 	title: $('#title-pop').val(),
+		// 	from: $('#from-pop').val(from),
+		// 	to: $('#to-pop').val(to),
+		// 	travel_mode: $('#travel-mode-pop').val(travelMode),
+		// 	measurement: $('#measurement-mode-pop').val(measurementMode),
+		// 	url: url
+		// };
+
+
+	//
+	// $('#saveModal').on('shown.bs.modal', function () {
+	// 	$('#title-pop').focus();
+	// });
 
 	$('#save-changes').on('click', function(){
 		$('#saveModal').modal('hide');
