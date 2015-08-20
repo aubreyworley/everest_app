@@ -1,32 +1,55 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.profile-page{
-  margin-top: 50px;
+
+.profile-page {
+  position: relative;
+  background-color: #F9EAC8;
+  padding-bottom: 100px;
 }
 
-.profile-body {
-  font-size: .5em;
+.profile-img {
+  position: relative;
+  top: -120px;
+  border-style: solid;
+  border-width: 10px;
+  border-color: white;
 }
-.profile-section {
-  border-radius: 5px;
-  box-shadow: 1px 2px 5px #888888;
-  margin-bottom: 20px;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.6);
-}
-.author-post {
-  font-size: .6em;
+.jumbotron {
+  background-image: url(/profile_jumbo.jpg);
+  background-size: cover;
+  height: 350px;
 }
 
 .map-section {
-  border-radius: 5px;
-  box-shadow: 1px 2px 5px #888888;
-  margin-bottom: 20px;
+  margin-top: 50px;
+  background-color: white;
+  border-style: solid;
+  border-width: 10px;
+  border-color: white;
+  border-radius: 10px;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.6);
 }
-.map-section h3 {
+.profile-welcome {
   font-family: body-header;
-  font-size: 1em;
+  font-size: 25px;
 }
+
+.post-header {
+  font-family: body-header;
+  font-size: 18px;
+}
+.post-body {
+  font-family: body;
+  font-size: 18px;
+}
+.profile-info {
+  position: relative;
+  top: -120px;
+}
+.profile-info h2 {
+  font-family: body-header;
+}
+
+
+
