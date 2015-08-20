@@ -1,36 +1,39 @@
-Welcome, <%= current_user.email %>
-
-<h1>Your Profile</h1>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <h3>Saved Maps:</h3>
+<div class="container-fluid">
+  <div class="row profile-page">
+    <div class="col-md-1"></div>
+    <div class="col-md-7">
+      <h2>Welcome, <%= current_user.email %></h2>
       <% @maps.each do |map| %>
       <div class="map-section">
-        <p><b>Title: </b><%= map.title %></p>
-        <p><b>From: </b><%= map.from %></p>
-        <p><b>To: </b><%= map.to %></p>
-        <p><b>Travel Mode: </b><%= map.travel_mode %></p>
-        <p><b> Measurement: </b><%= map.measurement %></p>
-        <p><b><%= link_to "See Your Route", map.url %></b></p>
-        <p><b><%= link_to "Update Map", edit_map_path(map) %>
-          <p><b><%= link_to "Delete", map, method: :delete %></b></p>
-          <hr>
-          <p>
+        <div class="dropdown pull-right">
+          <button class="glyphicon glyphicon-chevron-down dropdown-toggle button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><%= link_to "Update Map", edit_map_path(map) %></li>
+            <li><%= link_to "Delete", map, method: :delete %></li>
+          </ul>
+        </div>
+        <p><h3>Title: </h3><%= map.title %></p>
+        <p><h3>From: </h3><%= map.from %></p>
+        <p><h3>To: </h3><%= map.to %></p>
+        <p><h3>Travel Mode: </h3><%= map.travel_mode %></p>
+        <p><h3> Measurement: </h3><%= map.measurement %></p>
+        <p><h3><%= link_to "See Your Route", map.url %></h3></p>
+        <hr>
+        <p>
             <!-- <a class="btn btn-social-icon btn-twitter btn-lg" href="https://twitter.com/share?url=<%= map.url %>&amp;text=<%= map.title %> via/Everest:" >
               <i class="fa fa-twitter"></i>
             </a> -->
             <!-- <a href="http://bufferapp.com/add" class="buffer-add-button" data-text="Testing" data-url="<%= map.url %>" data-count="vertical" ></a><script type="text/javascript" src="https://d389zggrogs7qo.cloudfront.net/js/button.js"></script> -->
             <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= map.url %>" data-text="Everest">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
           </p>
         </div>
         <% end %>
       </div>
-      <div data-id="<%= current_user.id %>" class="col-md-4 profile-section">
+      <div data-id="<%= current_user.id %>" class="col-md-3 profile-section">
 
-        <div class="dropdown pull-left">
+        <div class="dropdown pull-right">
           <button class="glyphicon glyphicon-chevron-down dropdown-toggle button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -42,5 +45,6 @@ Welcome, <%= current_user.email %>
         <hr class="style-one">
         <p> About: <%= @current_user.about %></p>
       </div>
+      <div class="col-md-1"></div>
     </div>
   </div>
