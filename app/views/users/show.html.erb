@@ -14,11 +14,11 @@
     <div class="col-md-1"></div>
     <div class="col-md-6">
       <span class="profile-welcome">Welcome <%= current_user.first_name %>!
-        <span><%= link_to "update profile", edit_user_path(current_user), class: "btn btn-primary pull-right" %></span>
+        <span><%= link_to "update profile", edit_user_path(current_user), class: "btn btn-dark pull-right" %></span>
     <% @maps.each do |map| %>
     <div class="map-section">
       <div class="dropdown pull-right">
-        <button class="dropdown-toggle button btn btn-primary" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Edit post
+        <button class="dropdown-toggle button btn btn-dark" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Edit post
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
           <li><%= link_to "Update Map", edit_map_path(map) %></li>

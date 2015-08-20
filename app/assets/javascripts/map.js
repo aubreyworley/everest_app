@@ -293,16 +293,16 @@ function drawPolyline (elevations, slopes) {
         ];
         var absSlope = Math.abs(slopes[i].slope);
         if (absSlope <= 5) {
-            pathColor = "#3CB371";
+            pathColor = "#16A086";
         } else if (absSlope <= 10) {
-            pathColor = "#FFFF00";
+            pathColor = "#F1C40F";
         } else if (absSlope <= 15) {
-            pathColor = "#3366FF";
+            pathColor = "#2A80B9";
         } else if (absSlope <= 20) {
-            pathColor = "#FF0000";
+            pathColor = "#C1392B";
         }
         else {
-            pathColor = "#000000";
+            pathColor = "#2D3E50";
         }
         mapPath = new google.maps.Polyline({
             path: routePath,
