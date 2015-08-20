@@ -1,50 +1,41 @@
-<div class="container-fluid">
-  <div class="row profile-page">
+<div class="profile-page">
+  <div class="jumbotron"></div>
+  <div class="container-fluid">
     <div class="col-md-1"></div>
-    <div class="col-md-7">
-      <h2>Welcome, <%= current_user.email %></h2>
-      <% @maps.each do |map| %>
-      <div class="map-section">
-        <div class="dropdown pull-right">
-          <button class="glyphicon glyphicon-chevron-down dropdown-toggle button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><%= link_to "Update Map", edit_map_path(map) %></li>
-            <li><%= link_to "Delete", map, method: :delete %></li>
-          </ul>
-        </div>
-        <p><h3>Title: </h3><%= map.title %></p>
-        <p><h3>From: </h3><%= map.from %></p>
-        <p><h3>To: </h3><%= map.to %></p>
-        <p><h3>Travel Mode: </h3><%= map.travel_mode %></p>
-        <p><h3> Measurement: </h3><%= map.measurement %></p>
-        <p><h3><%= link_to "See Your Route", map.url %></h3></p>
-        <hr>
-        <p>
-            <!-- <a class="btn btn-social-icon btn-twitter btn-lg" href="https://twitter.com/share?url=<%= map.url %>&amp;text=<%= map.title %> via/Everest:" >
-              <i class="fa fa-twitter"></i>
-            </a> -->
-            <!-- <a href="http://bufferapp.com/add" class="buffer-add-button" data-text="Testing" data-url="<%= map.url %>" data-count="vertical" ></a><script type="text/javascript" src="https://d389zggrogs7qo.cloudfront.net/js/button.js"></script> -->
-            <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= map.url %>" data-text="Everest">Tweet</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-          </p>
-        </div>
-        <% end %>
+    <div class="col-md-3">
+      <p><%= image_tag current_user.profile_image.url(:medium), class: "img-responsive img-rounded profile-img" %></p>
+      <div class="profile-info">
+        <h2><%= current_user.first_name %><%= " " %><%= current_user.last_name %></h2>
+        <p>@<%= @current_user.user_name %></p>
+        <p><%= @current_user.about %></p>
       </div>
-      <div data-id="<%= current_user.id %>" class="col-md-3 profile-section">
-
-        <div class="dropdown pull-right">
-          <button class="glyphicon glyphicon-chevron-down dropdown-toggle button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><%= link_to "Update Profile", edit_user_path(current_user) %></li>
-          </ul>
-        </div>
-        <p><%= image_tag current_user.profile_image.url(:medium) %></p>
-        <p><%= current_user.first_name %><%= " " %><%= current_user.last_name %></p>
-        <hr class="style-one">
-        <p> About: <%= @current_user.about %></p>
-      </div>
-      <div class="col-md-1"></div>
     </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-6">
+      <span class="profile-welcome">Welcome, <%= current_user.email %>
+        <span><li class="btn btn-primary pull-right"><%= link_to "update profile", edit_user_path(current_user) %></li>
+      </span>
+    <% @maps.each do |map| %>
+    <div class="map-section">
+      <div class="dropdown pull-right">
+        <button class="glyphicon glyphicon-chevron-down dropdown-toggle button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><%= link_to "Update Map", edit_map_path(map) %></li>
+          <li><%= link_to "Delete", map, method: :delete %></li>
+        </ul>
+      </div>
+      <span class="post-header"><%= map.title %></span><br>
+      <hr>
+      <span class="post-header">From: <span class="post-body"><%= map.from %></span><br>
+      <span class="post-header">To: <span class="post-body"><%= map.to %></span><br>
+      <span class="post-header">Travel Mode: <span class="post-body"><%= map.travel_mode %></span><br>
+      <span class="post-header">Measurement: <span class="post-body"></h3><%= map.measurement %></span><br>
+      <hr>
+      <span class="post-header"><%= link_to "See Your Route", map.url %></span><br>
+    </div>
+    <% end %>
   </div>
+  <div class="col-md-1"></div>
+</div>
+</div>

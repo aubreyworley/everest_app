@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   validates :password_digest, :presence => true, confirmation: true
 
   has_attached_file :profile_image,
-                    :styles => { :medium => "150x150>" },
+                    :styles => { :medium => "200x200#" },
                     # :storage => :s3,
                     # :s3_credentials => Proc.new { |a| a.instance.s3_credentials },
                     :storage => :s3,
