@@ -30,11 +30,15 @@ $(function(){
 		});
 
 	})
+
+	$('#saveModal').on('shown.bs.modal', function () {
+		$('#title').focus()
+	})
 });
 
 // $('#submit').on('submit', function (event) {
 // 		event.preventDefault();
-		
+
 // 		// Send POST to server to create newly edited photo
 // 		$.ajax({
 // 			type: "POST",
