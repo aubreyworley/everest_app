@@ -6,7 +6,7 @@
       <p><%= image_tag current_user.profile_image.url(:medium), class: "img-responsive img-rounded profile-img" %></p>
       <div class="profile-info">
         <h2><%= current_user.first_name %><%= " " %><%= current_user.last_name %></h2>
-        <p>@<%= @current_user.user_name %></p>
+        <p><%= @current_user.user_name %></p>
         <p>Joined <%= @current_user.created_at.strftime("%b. %Y") %></p>
         <p><%= @current_user.about %></p>
       </div>
