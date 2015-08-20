@@ -7,18 +7,18 @@
       <div class="profile-info">
         <h2><%= current_user.first_name %><%= " " %><%= current_user.last_name %></h2>
         <p>@<%= @current_user.user_name %></p>
+        <p>Joined <%= @current_user.created_at.strftime("%b. %Y") %></p>
         <p><%= @current_user.about %></p>
       </div>
     </div>
     <div class="col-md-1"></div>
     <div class="col-md-6">
-      <span class="profile-welcome">Welcome, <%= current_user.email %>
-        <span><li class="btn btn-primary pull-right"><%= link_to "update profile", edit_user_path(current_user) %></li>
-      </span>
+      <span class="profile-welcome">Welcome <%= current_user.first_name %>!
+        <span><%= link_to "update profile", edit_user_path(current_user), class: "btn btn-primary pull-right" %></span>
     <% @maps.each do |map| %>
     <div class="map-section">
       <div class="dropdown pull-right">
-        <button class="glyphicon glyphicon-chevron-down dropdown-toggle button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        <button class="dropdown-toggle button btn btn-primary" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Edit post
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
           <li><%= link_to "Update Map", edit_map_path(map) %></li>
