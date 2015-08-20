@@ -33,7 +33,6 @@ $(function(){
 			},
 			success: function(data) {
 				console.log(data);
-				location.href = "/profile";
 			}
 		});
 
@@ -44,7 +43,8 @@ $(function(){
 	});
 
 	$('#save-changes').on('click', function(){
-		$('#saveModal').modal('hide');
+		// $('#saveModal').modal('hide');
+		$('#save-alert').removeClass('hidden');
 	});
 
 });

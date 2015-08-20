@@ -251,5 +251,6 @@ form #from-to-switcher:hover:after {
   font-family: body;
 }
 
-
-
+#save-alert {
+  color: green;
+}
