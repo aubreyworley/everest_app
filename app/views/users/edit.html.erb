@@ -1,16 +1,22 @@
-<h1>Edit Profile</h1>
-<%= form_for current_user, :html => { :multipart => true } do |f| %>
-
-  <!-- Enables flash messages within the form for superior UX -->
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, class: "alert #{name == 'error' ? 'alert-danger' : 'alert-notice'}" %>
-  <% end %>
+<div class="col-md-4"></div>
+<div class="col-md-4">
+  <h1>Edit Profile</h1>
+  <hr>
+  <%= form_for current_user, :html => { :multipart => true } do |f| %>
+    <div class="form-group">
+      <!-- Enables flash messages within the form for superior UX -->
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: "alert #{name == 'error' ? 'alert-danger' : 'alert-notice'}" %>
+      <% end %>
   
-  <%= f.file_field :profile_image %><br>
-  <%= f.text_field :first_name, placeholder: "First Name" %><br>
-  <%= f.text_field :last_name, placeholder: "Last Name" %><br>
-  <%= f.text_field :user_name, placeholder: "User Name" %><br>
-  <%= f.email_field :email, placeholder: "Email" %><br>
-  <%= f.text_area :about, placeholder: "About Me" %><br>
-  <%= f.submit "Save Profile" %>
-<% end %>
+      <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %><br>
+      <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %><br>
+      <%= f.text_field :user_name, placeholder: "User Name", class: "form-control" %><br>
+      <%= f.email_field :email, placeholder: "Email", class: "form-control" %><br>
+      <%= f.text_area :about, placeholder: "About Me", class: "form-control" %><br>
+      <%= f.file_field :profile_image, class: "btn" %><br>
+      <%= f.submit "Save Profile", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+<div class="col-md-4"></div>
