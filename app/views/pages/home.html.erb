@@ -5,6 +5,32 @@
     </div>
   </div>
 
+  <!-- Tutorial section -->
+  <div class="container-fluid">
+    <div class="row about text-center">
+      <div class="col-md-4 about-one">
+        <h3>1</h3>
+        <p>
+          Choose your destination and travel mode.
+        </p>
+      </div>
+      <div class="col-md-4 about-two">
+        <h3>2</h3>
+        <p>
+          Discover your custom elevation.
+        </p>
+      </div>
+      <div class="col-md-4 about-three">
+        <h3>3</h3>
+        <p>
+          Adjust your route for your day.
+        </p>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <!-- End of tutorial section -->
+
   <div class="container-fluid">
     <div class="map">
       <div class="col-md-12">
@@ -44,9 +70,9 @@
               <button class="btn btn-dark" id="go">Go</button>
             </div>
             <% if current_user %>
-              <div class="hidden form-group" id="save">
-                <a href="#" data-toggle="modal" data-target="#saveModal"><label>Save your route?</label></a>
-            <% end %>
+            <div class="hidden form-group" id="save">
+              <a href="#" data-toggle="modal" data-target="#saveModal"><label>Save your route?</label></a>
+              <% end %>
             </div>
           </div>
         </form>
@@ -65,38 +91,34 @@
       </div>
       <div class="modal-body">
         <form>
-            <div class="form-group">
-              <label>
-                From: <input id="from-pop" type="text" placeholder="Nob Hill, San Francisco, CA">
-              </label>
+          <div class="form-group">
+            <div>       
+                <span>From: <input class="form-control" id="from-pop" type="text" placeholder="Nob Hill, San Francisco, CA"></span>     
             </div>
-            <div class="form-group">
-              <label>
-                To: <input id="to-pop" type="text" placeholder="Russian Hill, San Francisco, CA">
-              </label>
+            <div>
+                <span>To: <input class="form-control" id="to-pop" type="text" placeholder="Russian Hill, San Francisco, CA"></span>
             </div>
-            <div class="form-group">
-              <label for="travel-mode-pop">Travel mode:</label>
-              <select id="travel-mode-pop">
+            <div>
+              <span for="travel-mode-pop">Travel mode:</span>
+              <select class="form-control" id="travel-mode-pop">
                 <option>Bicycling</option>
                 <option>Walking</option>
                 <option>Driving</option>
               </select>
             </div>
-            <div class="form-group">
-              <label for="measurement-mode-pop">Units:</label>
-              <select id="measurement-mode-pop">
+            <div>
+              <span for="measurement-mode-pop">Units:</span>
+              <select class="form-control" id="measurement-mode-pop">
                 <option value="miles">Miles</option>
                 <option value="km">Kilometres</option>
               </select>
-            </div class="form-group">
-            <div class="form-group">
-              <label>
-                  Title: <input id="title-pop" type="text" placeholder="My running route">
-              </label>
             </div>
-          </form>
-        </div>
+            <div>
+                <span>Title: <input class="form-control" id="title-pop" type="text" placeholder="My running route"></span>
+            </div>
+          </div>
+        </form>
+      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" id="save-changes" class="btn btn-primary">Save changes</button>
