@@ -9,13 +9,11 @@ class User < ActiveRecord::Base
 
   has_attached_file :profile_image,
                     :styles => { :medium => "200x200#" },
-                    # :storage => :s3,
-                    # :s3_credentials => Proc.new { |a| a.instance.s3_credentials },
                     :storage => :s3,
                     :s3_credentials => Proc.new { |a| a.instance.s3_credentials },
                     :s3_host_name => 's3-us-west-1.amazonaws.com',
                     :path => "profile_image/:id/:style/profile_image.:extension",
-                    :default_url => "https://s3.amazonaws.com/everest-sf-app/defaults/default_profile_image.png"
+                    :default_url => "https://s3-us-west-1.amazonaws.com/everest-sf-app/defaults/default-profile.png"
 
 
   def s3_credentials
