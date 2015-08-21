@@ -48,11 +48,11 @@ $(function(){
 	});
 
 	// navigates to pieku list after click.
-	// $("#piekuNav").click(function() {
-	// 	event.preventDefault();
+	$("#tagline").click(function() {
+		event.preventDefault();
 
-	// 	var yPost = $('#piekus').offset().top-130;
-	// 	window.scroll(0, yPost);
-	// });
+		var yPost = $('#scroll').offset().top;
+		window.scroll(0, yPost);
+	});
 
 });
