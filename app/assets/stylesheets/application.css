@@ -263,6 +263,112 @@ form #from-to-switcher:hover:after {
 }
 
 /*----------------------------
+    LOGO AND TAGLINE ANIMATIONS
+-----------------------------*/
+
+#site-title {
+  -webkit-animation: site-title-load .5s 1 ease-out .5s forwards;
+  -moz-animation: site-title-load .5s 1 ease-out .5s forwards;
+  -o-animation: site-title-load .5s 1 ease-out .5s forwards;
+  animation: site-title-load .5s 1 ease-out .5s forwards;
+}
+
+@-webkit-keyframes site-title-load {
+  0% {
+    transform: translateY(-25px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes site-title-load {
+  0% {
+    transform: translateY(-25px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@-o-keyframes site-title-load {
+  0% {
+    transform: translateY(-25px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes site-title-load {
+  0% {
+    transform: translateY(-25px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+#tagline {
+  -webkit-animation: tagline-load .5s 1 ease-out .5s forwards;
+  -moz-animation: tagline-load .5s 1 ease-out .5s forwards;
+  -o-animation: tagline-load .5s 1 ease-out .5s forwards;
+  animation: tagline-load .5s 1 ease-out .5s forwards;
+}
+
+@-webkit-keyframes tagline-load {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes tagline-load {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@-o-keyframes tagline-load {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes tagline-load {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/*----------------------------
     MODAL DISPLAY STYLES
 -----------------------------*/
 
