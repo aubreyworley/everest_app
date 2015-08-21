@@ -250,7 +250,6 @@ form #from-to-switcher:hover:after {
   display: none;
 }
 .labels {
-  margin-left: 40px;
   font-size: 1.2em;
   font-family: body-header;
 }
@@ -322,6 +321,7 @@ form #from-to-switcher:hover:after {
   -moz-animation: tagline-load .5s 1 ease-out .5s forwards;
   -o-animation: tagline-load .5s 1 ease-out .5s forwards;
   animation: tagline-load .5s 1 ease-out .5s forwards;
+  cursor: pointer;
 }
 
 @-webkit-keyframes tagline-load {

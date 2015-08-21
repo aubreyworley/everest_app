@@ -47,12 +47,20 @@ $(function(){
 		$('#save-alert').removeClass('hidden');
 	});
 
-	// navigates to pieku list after click.
+	// navigates to map create after click.
 	$("#tagline").click(function() {
 		event.preventDefault();
 
 		var yPost = $('#scroll').offset().top;
 		window.scroll(0, yPost);
 	});
+
+	// navigates to map create after click.
+	// $("#tagline").click(function() {
+	// 	event.preventDefault();
+
+	// 	var yPost = $('#scroll').offset().top;
+	// 	window.scroll(0, yPost);
+	// });
 
 });
