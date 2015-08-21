@@ -375,3 +375,19 @@ form #from-to-switcher:hover:after {
 .modal-body div {
   margin-bottom: 20px;
 }
+
+/*----------------------------
+    ABOUT DISPLAY STYLES
+-----------------------------*/
+.about {
+  margin-top: 100px;
+}
+.about-tag {
+  line-height: 5ex;
+}
+.about-logo {
+  font-family: logo;
+  font-size: 70px;
+  vertical-align: middle;
+  text-shadow: 1px 2px 2px #000000;
+}

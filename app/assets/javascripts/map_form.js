@@ -47,4 +47,12 @@ $(function(){
 		$('#save-alert').removeClass('hidden');
 	});
 
+	// navigates to pieku list after click.
+	$("#piekuNav").click(function() {
+		event.preventDefault();
+
+		var yPost = $('#piekus').offset().top-130;
+		window.scroll(0, yPost);
+	});
+
 });
