@@ -49,7 +49,8 @@ $(function(){
 
 	// navigates to map create after click.
 	$("#tagline").click(function() {
-		event.preventDefault();
+		// event.preventDefault();
+		window.location = window.location + '#scroll'
 
 		var yPost = $('#scroll').offset().top;
 		window.scroll(0, yPost);
