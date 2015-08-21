@@ -386,6 +386,9 @@ form #from-to-switcher:hover:after {
 /*----------------------------
     ABOUT DISPLAY STYLES
 -----------------------------*/
+.tutorial {
+  background-color: #F5F8FA;
+}
 .about {
   margin-top: 100px;
 }
