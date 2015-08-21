@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# Kaminari
+gem 'kaminari', '~> 0.16.3'
 # paperclip
 gem "paperclip", "~> 4.3"
 # SDK for S3
