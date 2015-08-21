@@ -15,6 +15,7 @@
     <div class="col-md-6">
       <span class="profile-welcome">Welcome <%= current_user.first_name %>!
         <span><%= link_to "update profile", edit_user_path(current_user), class: "btn btn-dark pull-right" %></span>
+      <p><%= paginate @maps %></p>
     <% @maps.each do |map| %>
     <div class="map-section">
       <div class="dropdown pull-right">

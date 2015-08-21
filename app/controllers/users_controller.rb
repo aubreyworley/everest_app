@@ -30,8 +30,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @maps = current_user.maps.order(created_at: :desc)
-    # .page(params[:page]).per(10)
+    @maps = current_user.maps.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def edit
@@ -42,7 +41,7 @@ class UsersController < ApplicationController
       form_params = params.require(:user).permit(:first_name, :last_name, :user_name, :email, :about, :profile_image)
       current_user.update_attributes(form_params)
       redirect_to profile_path
-      flash[:success] = "Profile successfully updated!"
+      # flash[:success] = "Profile successfully updated!"
     else
       redirect_to '/'
     end
