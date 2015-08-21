@@ -377,6 +377,13 @@ form #from-to-switcher:hover:after {
 }
 
 /*----------------------------
+    SOCIAL DISPLAY STYLES
+-----------------------------*/
+.social {
+  margin-top: 10px;
+}
+
+/*----------------------------
     ABOUT DISPLAY STYLES
 -----------------------------*/
 .about {
