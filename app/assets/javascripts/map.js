@@ -22,6 +22,12 @@ $(function () {
     var travelMode = getURLParameter('travelMode');
     measurementMode = getURLParameter('measurementMode');
 
+    var scrollToMap = (from != "null") || (to != "null") || (travelMode != "null") || (measurementMode != 'null')
+    if(scrollToMap) {
+        var yPost = $('#scroll').offset().top;
+        window.scroll(0, yPost);
+    }
+
     // If this link is being shared set to and from
     if (from != "null") {
         $('#from').val(decodeURLParameter(from));
@@ -35,10 +41,10 @@ $(function () {
         $('#travel-mode').val(decodeURLParameter(travelMode));
     }
 
-    if (measurementMode === 'null') {
-        measurementMode = 'miles';
-    } else {
+    if (measurementMode != "null") {
         $('#measurement-mode').val(decodeURLParameter(measurementMode));
+    } else {
+        measurementMode = 'miles';
     }
 
     $("#from-to-switcher").on("click", function (e) {
